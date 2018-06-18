@@ -3,6 +3,7 @@
 // wyszukiwaniem i przekazywać do komponentu, który wyświetli odpowiedniego GIFa
 // pobieranie Gif
 var GIPHY_LOADING_URL = 'http://www.ifmo.ru/images/loader.gif';
+var GIPHY_PUB_KEY = 'q4k1xiFfyXHFEVGeG4SYB8VJsIA5OtQu'; //???
 
 App = React.createClass({
 // initial values of the state
