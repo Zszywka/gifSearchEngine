@@ -18,9 +18,9 @@ Search = React.createClass({
       searchingText: searchingText   ///??
     });
     // the question is sent if it has more than 2 characters
-    if (serachingText.length > 2) {
-      // serachingText -> our text in searching
-      this.props.onSearch(serachingText);
+    if (searchTermchingText.length > 2) {
+      // searchingText -> our text in searching
+      this.props.onSearch(searchingText);
     }
   },
   // recognizes that the pressed key is enter and sends a message to the parent
@@ -29,7 +29,7 @@ Search = React.createClass({
     // 13 it is code button ENTER
     // if you press the key ENTER
     if (event.keyCode === 13) {
-      this.props.onSearch(this.state.serachingText);
+      this.props.onSearch(this.state.searchingText);
     }
   },
 
@@ -50,7 +50,7 @@ Search = React.createClass({
       onKeyUp = {this.handleKeyUp}
       placeholder = 'Enter the search phrase here'
       style = {styles}
-      value = {this.state.searchTerm} //???serachTerm
+      value = {this.state.searchTerm} //???searchTerm
     />
 
   }
