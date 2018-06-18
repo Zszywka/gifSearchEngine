@@ -58,7 +58,7 @@ App = React.createClass({
       }
     };
     xhr.send();
-  }
+  },
 
   render: function() {
 
