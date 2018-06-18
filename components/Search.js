@@ -18,7 +18,7 @@ Search = React.createClass({
       searchingText: searchingText   ///??
     });
     // the question is sent if it has more than 2 characters
-    if (searchTermchingText.length > 2) {
+    if (searchingText.length > 2) {
       // searchingText -> our text in searching
       this.props.onSearch(searchingText);
     }
