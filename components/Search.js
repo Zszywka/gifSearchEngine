@@ -23,8 +23,11 @@ Search = React.createClass({
       this.props.onSearch(serachingText);
     }
   },
-
+  // recognizes that the pressed key is enter and sends a message to the parent
+  //so that this one again starts the function that sends the query after the gifa
   handleKeyUp: function(event) {
+    // 13 it is code button ENTER
+    // if you press the key ENTER
     if (event.keyCode === 13) {
       this.props.onSearch(this.state.serachingText);
     }
@@ -43,6 +46,7 @@ Search = React.createClass({
     return < input
       type = 'text'
       onChange = {this.handleChange}  //?
+      // listening for pressing the enter key
       onKeyUp = {this.handleKeyUp}
       placeholder = 'Enter the search phrase here'
       style = {styles}
