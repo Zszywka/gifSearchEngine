@@ -44,6 +44,8 @@ App = React.createClass({
     var url = GIPHY_LOADING_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
     // wywolujemy cala sekwencje tworzenia zapytania do XHR do serwera i wysylamy je
     var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', url);
     xhr.onload = function() {
       if (xhr.status === 200) {
         // w obiekcie odpowiedzi mamy obiekt z danymi, rozpakkowujemy je do zmiennej data
