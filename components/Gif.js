@@ -13,11 +13,11 @@ var styles = {
 
 Gif = React.createClass({
   getUrl: funtion() {
-    // returns the address of the page with the searched gif or gif loading
+
     return this.props.sourceUrl || GIPHY_LOADING_URL;
   },
   render: function() {
-    // if false-> this.props.loading if truth-> GIPHY_LOADING_URL
+    
     var url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;
     return(
       <div style = {styles}>
