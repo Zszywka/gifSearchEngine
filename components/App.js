@@ -2,7 +2,7 @@
 // W tym komponencie będziemy odbierać wiadomość z komponentu zajmującego się
 // wyszukiwaniem i przekazywać do komponentu, który wyświetli odpowiedniego GIFa
 // pobieranie Gif
-var GIPHY_LOADING_URL = 'http://www.ifmo.ru/images/loader.gif';
+var GIPHY_API_URL = 'https://api.giphy.com';
 var GIPHY_PUB_KEY = 'q4k1xiFfyXHFEVGeG4SYB8VJsIA5OtQu'; //???
 
 App = React.createClass({
@@ -41,7 +41,7 @@ App = React.createClass({
   // na wejscie przyjmujemy parametr tekst wpisany, funkcja ktora ma sie wykonac po pobraniu
   getGif: function(searchingText, callback) {
     // kontruujemy adres URL dla API Giphy
-    var url = GIPHY_LOADING_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
+    var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;
     // wywolujemy cala sekwencje tworzenia zapytania do XHR do serwera i wysylamy je
     var xhr = new XMLHttpRequest();
 
