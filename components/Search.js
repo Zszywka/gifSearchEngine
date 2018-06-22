@@ -1,39 +1,27 @@
-// nie trzeba tutaj zbyt wiele wyjaśniać. Ten komponent to pasek wyszukiwania.
-// Napiszemy w nim drobną logikę, która rozpocznie wyszukiwanie, kiedy przyciśniemy
-// enter albo kiedy długość wpisywanego tekstu będzie większa niż 2 litery,
-
 Search = React.createClass({
-  // ----------------------------SET INITIAL STATE -----------------------------
+  
   getInitialState() {
     return {
       searchingText: ''
     };
   },
 
-  // --------------------------HANDLECAHNGE METHOD------------------------------
   handleChange: function(event) {
-    // event -> write words on search
-    var searchingText = event.target.value;  //??
+    var searchingText = event.target.value;
     this.setState({
-      searchingText: searchingText   ///??
+      searchingText: searchingText
     });
-    // the question is sent if it has more than 2 characters
     if (searchingText.length > 2) {
-      // searchingText -> our text in searching
       this.props.onSearch(searchingText);
     }
   },
-  // recognizes that the pressed key is enter and sends a message to the parent
-  //so that this one again starts the function that sends the query after the gifa
+
   handleKeyUp: function(event) {
-    // 13 it is code button ENTER
-    // if you press the key ENTER
     if (event.keyCode === 13) {
       this.props.onSearch(this.state.searchingText);
     }
   },
 
-  // --------------------------------RENDER-------------------------------------
   render: function() {
 
     var styles = {
@@ -42,15 +30,13 @@ Search = React.createClass({
       maxWidth: '350px'
     };
 
-
     return < input
       type = 'text'
-      onChange = {this.handleChange}  //?
-      // listening for pressing the enter key
+      onChange = {this.handleChange}
       onKeyUp = {this.handleKeyUp}
       placeholder = 'Enter the search phrase here'
       style = {styles}
-      value = {this.state.searchTerm} //???searchTerm
+      value = {this.state.searchingText} 
     />
 
   }
